@@ -16,16 +16,10 @@ governing permissions and limitations under the License.
   /* Interactions with overbackground button should match background. Not a DNA token, overridden in WHCM. */
   --spectrum-button-over-background-color: inherit;
 
-  --spectrum-actionbutton-background-color-selected: var(--spectrum-global-color-gray-600);
-  --spectrum-actionbutton-background-color-selected-hover: var(--spectrum-global-color-gray-700);
-  --spectrum-actionbutton-background-color-selected-key-focus: var(--spectrum-global-color-gray-700);
-  --spectrum-actionbutton-background-color-selected-down: var(--spectrum-global-color-gray-800);
-  --spectrum-actionbutton-background-color-disabled: transparent;
   --spectrum-actionbutton-border-color-selected: var(--spectrum-actionbutton-background-color-selected);
   --spectrum-actionbutton-border-color-selected-hover: var(--spectrum-actionbutton-background-color-selected-hover);
   --spectrum-actionbutton-border-color-selected-key-focus: var(--spectrum-actionbutton-background-color-selected-key-focus);
   --spectrum-actionbutton-border-color-selected-down: var(--spectrum-actionbutton-background-color-selected-down);
-  --spectrum-actionbutton-border-color-disabled: var(--spectrum-global-color-gray-300);
   --spectrum-actionbutton-text-color-selected: var(--spectrum-global-color-gray-50);
   --spectrum-actionbutton-text-color-selected-hover: var(--spectrum-global-color-gray-50);
   --spectrum-actionbutton-text-color-selected-key-focus: var(--spectrum-global-color-gray-50);
@@ -35,10 +29,6 @@ governing permissions and limitations under the License.
   --spectrum-actionbutton-icon-color-selected-key-focus: var(--spectrum-global-color-gray-50);
   --spectrum-actionbutton-icon-color-selected-down: var(--spectrum-global-color-gray-50);
 
-  --spectrum-actionbutton-quiet-background-color-hover: var(--spectrum-global-color-gray-200);
-  --spectrum-actionbutton-quiet-background-color-key-focus:  var(--spectrum-global-color-gray-200);
-  --spectrum-actionbutton-quiet-background-color-down: var(--spectrum-global-color-gray-300);
-
   --spectrum-actionbutton-emphasized-background-color-selected: var(--spectrum-accent-background-color-default);
   --spectrum-actionbutton-emphasized-background-color-selected-hover: var(--spectrum-accent-background-color-hover);
   --spectrum-actionbutton-emphasized-background-color-selected-key-focus: var(--spectrum-accent-background-color-key-focus);
@@ -47,20 +37,6 @@ governing permissions and limitations under the License.
   --spectrum-actionbutton-emphasized-border-color-selected-hover: var(--spectrum-actionbutton-emphasized-background-color-selected-hover);
   --spectrum-actionbutton-emphasized-border-color-selected-key-focus: var(--spectrum-actionbutton-emphasized-background-color-selected-key-focus);
   --spectrum-actionbutton-emphasized-border-color-selected-down: var(--spectrum-actionbutton-emphasized-background-color-selected-down);
-
-  --spectrum-actionbutton-static-black-border-color: rgba(0, 0, 0, 0.4);
-  --spectrum-actionbutton-static-black-border-color-hover: rgba(0, 0, 0, 0.55);
-  --spectrum-actionbutton-static-black-border-color-key-focus: rgba(0, 0, 0, 0.55);
-  --spectrum-actionbutton-static-black-border-color-down: rgba(0, 0, 0, 0.7);
-  --spectrum-actionbutton-static-black-border-color-disabled: rgba(0, 0, 0, 0.1);
-  --spectrum-actionbutton-static-black-background-color: transparent;
-
-  --spectrum-actionbutton-static-white-border-color: rgba(255, 255, 255, 0.4);
-  --spectrum-actionbutton-static-white-border-color-hover: rgba(255, 255, 255, 0.55);
-  --spectrum-actionbutton-static-white-border-color-key-focus: rgba(255, 255, 255, 0.55);
-  --spectrum-actionbutton-static-white-border-color-down: rgba(255, 255, 255, 0.7);
-  --spectrum-actionbutton-static-white-border-color-disabled: rgba(255, 255, 255, 0.1);
-  --spectrum-actionbutton-static-white-background-color: transparent;
 }
 
 .spectrum-LogicButton,
@@ -323,13 +299,13 @@ governing permissions and limitations under the License.
       }
 
       &[data-style=outline] {
-        --spectrum-button-color: var(--spectrum-blue-900);
-        --spectrum-button-color-hover: var(--spectrum-blue-1000);
-        --spectrum-button-color-down: var(--spectrum-blue-1100);
-        --spectrum-button-color-key-focus: var(--spectrum-blue-1000);
-        --spectrum-button-background-color-hover: var(--spectrum-blue-200);
-        --spectrum-button-background-color-down: var(--spectrum-blue-300);
-        --spectrum-button-background-color-key-focus: var(--spectrum-blue-200);
+        --spectrum-button-color: var(--spectrum-accent-color-900);
+        --spectrum-button-color-hover: var(--spectrum-accent-color-1000);
+        --spectrum-button-color-down: var(--spectrum-accent-color-1100);
+        --spectrum-button-color-key-focus: var(--spectrum-accent-color-1000);
+        --spectrum-button-background-color-hover: var(--spectrum-accent-color-200);
+        --spectrum-button-background-color-down: var(--spectrum-accent-color-300);
+        --spectrum-button-background-color-key-focus: var(--spectrum-accent-color-200);
       }
     }
 
@@ -442,6 +418,7 @@ governing permissions and limitations under the License.
 
   &:focus-ring {
     background-color: xvar(--spectrum-high-contrast-button-face, var(--spectrum-actionbutton-background-color-key-focus));
+    border-color: xvar(--spectrum-high-contrast-highlight, var(--spectrum-actionbutton-border-color-hover));
     color: xvar(--spectrum-high-contrast-button-text, var(--spectrum-actionbutton-text-color-key-focus));
 
     .spectrum-Icon {
@@ -499,6 +476,7 @@ governing permissions and limitations under the License.
 
     &:focus-ring {
       background-color: xvar(--spectrum-high-contrast-highlight, var(--spectrum-actionbutton-background-color-selected-key-focus));
+      border-color: xvar(--spectrum-high-contrast-highlight-text, var(--spectrum-actionbutton-border-color-selected-hover));
       color: xvar(--spectrum-high-contrast-highlight-text, var(--spectrum-actionbutton-text-color-selected-key-focus));
 
       .spectrum-Icon {
@@ -542,6 +520,7 @@ governing permissions and limitations under the License.
 
     &:focus-ring {
       background-color: xvar(--spectrum-high-contrast-highlight, var(--spectrum-actionbutton-emphasized-background-color-selected-key-focus));
+      border-color: xvar(--spectrum-high-contrast-highlight-text, var(--spectrum-actionbutton-emphasized-border-color-selected-hover));
       color: xvar(--spectrum-high-contrast-highlight-text, var(--spectrum-actionbutton-emphasized-text-color-selected-key-focus));
 
       .spectrum-Icon {
